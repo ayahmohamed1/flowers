@@ -1,0 +1,118 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.card {
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 340px;
+  width: 100%;
+  padding: 2rem 1.5rem 2.5rem;
+  text-align: center;
+}
+
+.catWrap {
+  margin-bottom: 0.4rem;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+}
+
+.hello {
+  font-family: var(--font-hand);
+  font-size: clamp(2.2rem, 9vw, 3.2rem);
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.nameText {
+  font-family: var(--font-hand);
+  font-size: clamp(2.6rem, 10vw, 3.8rem);
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+}
+
+.question {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+  margin-top: 0.3rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnYes, .btnNo {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.5rem;
+  border-radius: 100px;
+  border: 1.5px solid var(--red);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnYes {
+  background: transparent;
+  color: var(--text);
+}
+.btnYes:hover {
+  background: var(--red);
+  color: white;
+}
+
+.btnNo {
+  background: transparent;
+  color: var(--text);
+}
+.btnNo:hover {
+  background: #eee;
+}
+
+/* Floating hearts */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  top: -10%;
+  animation: floatDown 8s linear infinite;
+  opacity: 0.35;
+}
+
+@keyframes floatDown {
+  0%   { transform: translateY(0) rotate(0deg);    opacity: 0; }
+  10%  { opacity: 0.35; }
+  90%  { opacity: 0.2; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
